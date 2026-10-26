@@ -1,9 +1,9 @@
 ---
-name: bitter-lesson-check
-description: Judge whether a piece of agent scaffolding (skill, rule, prompt, steering doc, lint, harness, eval, workflow) will compound or decay as models improve, using Sutton's bitter lesson. Use when deciding what to build, keep, or delete in an agent setup, or when ranking improvements to a coding agent.
+name: principles-bitter-lesson
+description: Judge whether a piece of agent scaffolding (skill, rule, prompt, steering doc, lint, harness, eval, workflow) will compound or decay as models improve, using Sutton's bitter lesson. Use when deciding what to build, keep, or delete in an agent setup, or when ranking improvements to a coding agent. Also defines the inline [bl: ...] tags, the BITTER_LESSON.md sidecar, and their checker. Formerly bitter-lesson-check.
 ---
 
-# Bitter Lesson Check
+# Bitter Lesson
 
 Sutton's bitter lesson (2019): general methods that scale with compute, like
 search and learning, beat hand-coded human knowledge over time. For agents:
@@ -12,9 +12,9 @@ Scaffolding that gives the model feedback, or states what you actually want,
 gets more valuable as models improve.
 
 This skill sorts each item into **durable** or **temporary** so effort goes to
-the part that compounds.
+the part that compounds. Part of the [`principles`](../principles/SKILL.md) group.
 
-## Trigger [bl: strong]
+## Trigger
 
 Use when:
 - the user asks "does this violate the bitter lesson" or "will this age well"
@@ -31,7 +31,7 @@ Do not use when:
 - Required: the list of items to judge (skills, rules, prompts, lints, evals, harness pieces)
 - Optional: the problem each item was added to fix, how often it fires, its maintenance cost
 
-## The test [bl: invariant]
+## The test
 
 For each item ask: **would we still need this if the model were 10x smarter?**
 
@@ -45,7 +45,7 @@ For each item ask: **would we still need this if the model were 10x smarter?**
 | Implementation recipes in prose | exact command sequences the model could derive | Temporary. Delete as models catch up. |
 | Team taste | "reuse the existing seam", "short docstrings" | Middle. Prefer a lint rule or examples mined from real review comments over hand-written rules. |
 
-## Workflow [bl: strong]
+## Workflow
 
 1. List every item. For each, note the failure it was added to fix.
 2. Apply the 10x test and place it in a category above.
@@ -54,7 +54,7 @@ For each item ask: **would we still need this if the model were 10x smarter?**
 5. For middle items: check if a hard gate (lint, type, CI) or learning from examples can replace the prose.
 6. Rank improvements: durable items with high leverage first. Temporary items only when the near-term payoff is clear.
 
-## Tags and sidecar [bl: invariant]
+## Tags and sidecar
 
 Tags record how likely a smarter model makes an item unnecessary, so you know what to clean up.
 
@@ -74,6 +74,7 @@ Tags record how likely a smarter model makes an item unnecessary, so you know wh
 
 - `strong` and `soft` rows need a review date. `soft` rows need delete-when. Ablation holds the last with/without eval result.
 - **Expiry is evidence based.** Run `ablate` and a with/without eval on a new model release, a passed review date, or when a `strong` item becomes a hard check. No difference: delete the item and its row.
+- **Principle skills are exempt.** The `principles*` skills are durable reasoning methods (the test above, the scientific method, first principles), not scaffolding for a weak model. They carry no tags, no sidecar, and stay out of the allowlist. This skill is one of them.
 
 Checker: `scripts/bitter_lesson.py` (Python stdlib, tests in `tests/`). The tag names are one constant (`TAGS`). Tags inside inline code are mentions and are ignored.
 
@@ -82,13 +83,13 @@ Checker: `scripts/bitter_lesson.py` (Python stdlib, tests in `tests/`). The tag 
 - `ablate --root <repo> [--format json]`: every `soft` row plus any row past review, with its SKILL.md text, ready for a with/without eval.
 - Start the allowlist small and add one line per skill (a ratchet).
 
-## Caveat [bl: strong]
+## Caveat
 
 The bitter lesson is about research over years. Shipping work is about this
 quarter. A temporary rule that saves many review rounds now is worth it. Mark
 it temporary and do not build process on top of it.
 
-## Output [bl: strong]
+## Output
 
 A table with columns: item, category, verdict (durable / temporary / middle),
 reason, and the action (invest, keep small with review date, convert to a

@@ -197,6 +197,7 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - **Verify:** the checks that run on the change itself (CI on the pull request) are the build gate. "It built on my machine" is not evidence. [bl: invariant]
 - **Surface assumptions:** on reversible work, proceed and log the assumptions. On production changes, publishing, or deletes, stop and ask. [bl: strong]
 - **Comments:** comment cleanup only touches comments the diff adds or changes, which keeps rule 5 ("Remove comments you don't understand") intact. [bl: strong]
+- Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 

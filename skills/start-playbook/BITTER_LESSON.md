@@ -5,7 +5,7 @@ evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,
 keyed by the item's first words. 
 Tags: invariant = rules of the game, always follow. strong = follow it, should
 become a hard check or learned example. soft = guidance for weaker models,
-candidate to expire. Checker: `skills/bitter-lesson-check/scripts/bitter_lesson.py`.
+candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_lesson.py`.
 
 | Item | Tag | Why | Review | Delete when | Ablation |
 |---|---|---|---|---|---|
@@ -24,3 +24,4 @@ candidate to expire. Checker: `skills/bitter-lesson-check/scripts/bitter_lesson.
 | Verify: the checks that run | invariant | Feedback signal: the change's own CI is the build gate. | | | |
 | Surface assumptions: on reversible | strong | Protocol. Could become a hard gate on production actions. | 2027-04-26 | | |
 | Comments: comment cleanup only | strong | Protocol. A diff-scoped comment reviewer can enforce it. | 2027-04-26 | | |
+| Evaluating a claim | strong | Routing pointer to the principles group. Could be learned from routing history. | 2027-04-26 | | |

@@ -8,5 +8,5 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 skills/bitter-lesson-check/scripts/bitter_lesson.py check --root .
-      - run: python3 -m unittest discover -s skills/bitter-lesson-check/tests
+      - run: python3 skills/principles-bitter-lesson/scripts/bitter_lesson.py check --root .
+      - run: python3 -m unittest discover -s skills/principles-bitter-lesson/tests
