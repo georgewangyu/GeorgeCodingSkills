@@ -3,8 +3,6 @@ name: start-playbook
 description: Start here. Discovers and invokes the right skill for the work at hand, in lifecycle order (define, plan, build, verify, review, ship), and sets the always-on operating behaviors. Use when starting a session, or when you need to decide which skill or workflow applies. Adapted from addyosmani/agent-skills using-agent-skills, with bitter-lesson tags on each part.
 ---
 
-> Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
-
 # Using Agent Skills
 
 ## Overview
@@ -198,3 +196,7 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - **Verify:** the checks that run on the change itself (CI on the pull request) are the build gate. "It built on my machine" is not evidence. [bl: invariant]
 - **Surface assumptions:** on reversible work, proceed and log the assumptions. On production changes, publishing, or deletes, stop and ask. [bl: strong]
 - **Comments:** comment cleanup only touches comments the diff adds or changes, which keeps rule 5 ("Remove comments you don't understand") intact. [bl: strong]
+
+## Sources
+
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
