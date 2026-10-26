@@ -11,7 +11,7 @@ candidate to expire. Checker: `skills/bitter-lesson-check/scripts/bitter_lesson.
 |---|---|---|---|---|---|
 | Skill Discovery | strong | Routing tree is team protocol. Could be generated from skill frontmatter or learned from routing history. | 2027-04-26 | | |
 | 1. Surface Assumptions | strong | Protocol. The local override narrows it: proceed on reversible work, stop on prod. | 2027-04-26 | | |
-| 2. Manage Confusion Actively | soft | Coaching for today's tendency to guess. | 2027-01-26 | An ablation shows models stop and ask on conflicting specs without it. | |
+| 2. Manage Confusion Actively | strong | Rewritten from upstream "STOP and wait": facts are the agent's job, reversible calls are decided and logged, one-way doors are asked with a recommendation, never idle (Matt Pocock grilling, two-way vs one-way doors, pstack never-block). A protocol; could become a hard gate on one-way-door actions. | 2027-04-26 | | |
 | 3. Push Back When Warranted | soft | Coaching against sycophancy. | 2027-01-26 | An ablation shows no change in pushback on bad approaches without it. | |
 | 4. Enforce Simplicity | soft | Prose coaching. The durable form is size caps and reviewer gates. | 2027-01-26 | A diff size cap or a simplicity reviewer gates every change. | |
 | 5. Maintain Scope Discipline | strong | Could become a hard diff-scope check against the task. | 2027-04-26 | | |

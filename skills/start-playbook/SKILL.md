@@ -60,17 +60,18 @@ ASSUMPTIONS I'M MAKING:
 
 Don't silently fill in ambiguous requirements. The most common failure mode is making wrong assumptions and running with them unchecked. Surface uncertainty early — it's cheaper than rework.
 
-### 2. Manage Confusion Actively [bl: soft]
+### 2. Manage Confusion Actively [bl: strong]
 
 When you encounter inconsistencies, conflicting requirements, or unclear specifications:
 
-1. **STOP.** Do not proceed with a guess.
-2. Name the specific confusion.
-3. Present the tradeoff or ask the clarifying question.
-4. Wait for resolution before continuing.
+1. **Name it.** Say exactly which two things conflict: "the spec says X, the code does Y."
+2. **Facts are your job.** If a fact would settle it (code, config, logs, docs, history), look it up yourself. Never ask the human for something you can find.
+3. **Two-way doors: decide and log.** If the choice is reversible, pick the option you would recommend, write it down as an assumption with the reason, and keep going.
+4. **One-way doors: ask, with a recommendation.** If it touches production, publishing, deletes, data, or other people's work, ask the question with your recommended answer worded so "yes" accepts it. Keep working on everything the question does not block.
+5. **Never sit idle waiting.** Only the work that depends on the open question waits.
 
-**Bad:** Silently picking one interpretation and hoping it's right.
-**Good:** "I see X in the spec but Y in the existing code. Which takes precedence?"
+**Bad:** Silently picking one interpretation and hoping it's right, or stopping everything to ask something you could have looked up.
+**Good:** "The spec says X but the code does Y. The code is newer, so I'm following Y and logged it. Shout if X was intended."
 
 ### 3. Push Back When Warranted [bl: soft]
 
@@ -199,4 +200,4 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
