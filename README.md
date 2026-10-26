@@ -7,6 +7,7 @@ Agent skills for coding work, each tagged by how likely it is to survive better 
 | Skill | What it does |
 |---|---|
 | [`start-playbook`](skills/start-playbook/SKILL.md) | Start here. Maps the task to the right skill in lifecycle order (define, plan, build, verify, review, ship) and sets the always-on behaviors. Adapted from [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) `using-agent-skills`. |
+| [`grill-me`](skills/grill-me/SKILL.md) | Interviews you until the intent, or every decision in a plan, is settled. Rounds with a recommended answer per question, facts looked up by the agent, explicit-yes gate. Combines [addyosmani/agent-skills](https://github.com/addyosmani/agent-skills) `interview-me` and [mattpocock/skills](https://github.com/mattpocock/skills) `grilling`. |
 | [`principles`](skills/principles/SKILL.md) | Index of the evaluation methods for a claim, a number, a design, or scaffolding. |
 | [`principles-scientific-method`](skills/principles-scientific-method/SKILL.md) | Hypothesis, prediction before acting, one change at a time, baseline, try to prove yourself wrong, confidence labels. |
 | [`principles-first-principles`](skills/principles-first-principles/SKILL.md) | Fermi bounds from cores, bandwidth, memory, latency, queueing and OS limits, compared against the claim. |
@@ -38,4 +39,4 @@ Copy a skill folder into your agent's skills directory (for example `~/.claude/s
 
 ## License
 
-MIT. `start-playbook` adapts MIT-licensed text by Addy Osmani; see `THIRD_PARTY_LICENSE-agent-skills`.
+MIT. `start-playbook` and `grill-me` adapt MIT-licensed text by Addy Osmani (`THIRD_PARTY_LICENSE-agent-skills`). `grill-me` also adapts MIT-licensed text by Matt Pocock (`THIRD_PARTY_LICENSE-mattpocock-skills`).

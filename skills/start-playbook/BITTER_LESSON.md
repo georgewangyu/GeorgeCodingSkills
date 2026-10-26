@@ -24,4 +24,5 @@ candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_le
 | Verify: the checks that run | invariant | Feedback signal: the change's own CI is the build gate. | | | |
 | Surface assumptions: on reversible | strong | Protocol. Could become a hard gate on production actions. | 2027-04-26 | | |
 | Comments: comment cleanup only | strong | Protocol. A diff-scoped comment reviewer can enforce it. | 2027-04-26 | | |
+| Don't know what you want yet | strong | Routing pointer to grill-me. Could be learned from routing history. | 2027-04-26 | | |
 | Evaluating a claim | strong | Routing pointer to the principles group. Could be learned from routing history. | 2027-04-26 | | |
