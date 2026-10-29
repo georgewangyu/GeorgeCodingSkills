@@ -20,7 +20,7 @@ Task arrives
     ├── Have a rough concept, need variants? → brainstorm (upstream: idea-refine)
     ├── New project/feature/change? ──→ spec (upstream: spec-driven-development)
     ├── No quality bar written down? ──→ constraints (upstream: constraint-driven-development)
-    ├── Have a spec, need tasks? ──────→ planning-and-task-breakdown
+    ├── Have a spec, need tasks? ──────→ plan (upstream: planning-and-task-breakdown)
     ├── Implementing code? ────────────→ incremental-implementation
     │   ├── UI work? ─────────────────→ frontend-ui-engineering
     │   ├── API work? ────────────────→ api-and-interface-design
@@ -135,7 +135,7 @@ These are the subtle errors that look like productivity but create problems:
 
 2. **Skills are workflows, not suggestions.** Follow the steps in order. Don't skip verification steps. [bl: soft]
 
-3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec` → `planning-and-task-breakdown` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
+3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec` → `plan` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
 
 4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec`.
 
@@ -147,7 +147,7 @@ For a complete feature, the typical skill sequence is:
 1.  grill-me                    → Extract what the user actually wants
 2.  brainstorm                  → Refine vague ideas into a decision
 3.  spec                        → Define what we're building
-4.  planning-and-task-breakdown → Break into verifiable chunks
+4.  plan                        → Break into verifiable chunks
 5.  context-engineering         → Load the right context
 6.  source-driven-development   → Verify against official docs
 7.  incremental-implementation  → Build slice by slice
@@ -171,7 +171,7 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Define | grill-me | Surface what the user actually wants before any plan, spec, or code exists |
 | Define | brainstorm | Ground, challenge premises, diverge across axes, converge to a recommended decision |
 | Define | spec | Brief by default (goal, done check, proof), full design doc when earned |
-| Plan | planning-and-task-breakdown | Decompose into small, verifiable tasks |
+| Plan | plan | Ordered vertical slices, each one PR, one ticket, one worker brief |
 | Build | incremental-implementation | Thin vertical slices, test each before expanding |
 | Build | source-driven-development | Verify against official docs before implementing |
 | Build | doubt-driven-development | Adversarial fresh-context review of every non-trivial decision |
@@ -200,9 +200,10 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Don't know what you want yet, or want a plan grilled? -> `grill-me` (replaces upstream interview-me). [bl: strong]
 - Have a rough idea, or more than one way to build it? -> `brainstorm` (replaces upstream idea-refine). [bl: strong]
 - Direction settled, about to build or hand off? -> `spec` (replaces upstream spec-driven-development). [bl: strong]
+- Have a spec, and it needs more than one PR? -> `plan` (replaces upstream planning-and-task-breakdown). [bl: strong]
 - Need the quality bar, or agents keep making the same mistakes? -> `constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first four Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec` and `constraints`), the define-phase names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`), the define-phase and plan names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.

@@ -19,7 +19,7 @@ Not for:
 - The direction is chosen and needs requirements: go to `spec`.
 - A routine choice with one obvious answer: say so and do it.
 
-The chain is `grill-me` (what you want) -> `brainstorm` (what the options are) -> spec.
+The chain is `grill-me` (what you want) -> `brainstorm` (what the options are) -> `spec` -> `plan`.
 
 ## Step 0: Ground first [bl: invariant]
 

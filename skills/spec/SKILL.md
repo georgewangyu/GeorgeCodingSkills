@@ -19,7 +19,7 @@ Not for:
 - Fuzzy intent: run `grill-me` first. Open choice between approaches: run `brainstorm` first.
 - A PRD is what and why for a product. A spec is how. PRD mode is out of scope for now.
 
-The chain is `grill-me` (what you want) -> `brainstorm` (which option) -> `spec` (how, and how we know it worked).
+The chain is `grill-me` (what you want) -> `brainstorm` (which option) -> `spec` (how, and how we know it worked) -> `plan` (in what order, as which PRs).
 
 ## Pick the mode [bl: strong]
 
@@ -50,6 +50,7 @@ Out of scope: <what not to touch>
 - Out of scope is never blank. Unstated non-goals are where scope creep starts. [bl: invariant]
 - Hold back your theory of the cause at first. A stated guess narrows the search.
 - Workers and subagents get this brief. Add the plan doc link when the work is part of a series of PRs.
+- More than one PR? Run `plan` next. It cuts the spec into slices that each map to a PR, a ticket and a brief.
 
 ## Mode 2: Full (when earned)
 
@@ -85,7 +86,7 @@ A short section later briefs can quote verbatim:
 - **Invariants** that hold across the series (for example "fault handling goes only through seam X; each PR swaps the injected impl, never rewrites X").
 - **Ownership table:** PR, owns, must not touch, seam it uses or adds.
 
-Every seam a later PR relies on is named here. Every worker brief in the series links this section and requires reading it.
+Every seam a later PR relies on is named here. Every worker brief in the series links this section and requires reading it. `plan` full mode links this section rather than copying it.
 
 ### Format and publishing
 
