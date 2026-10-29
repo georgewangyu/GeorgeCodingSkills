@@ -10,5 +10,6 @@ jobs:
           python-version: "3.12"
       - run: python3 skills/principles-bitter-lesson/scripts/bitter_lesson.py check --root .
       - run: python3 -m unittest discover -s skills/principles-bitter-lesson/tests
+      - run: python3 -m unittest discover -s skills/mistake-miner/tests
       - run: pip install pyyaml
       - run: python3 -c "import glob,yaml,sys; bad=[f for f in glob.glob('skills/*/SKILL.md') if not isinstance(yaml.safe_load(open(f).read().split('---',2)[1]),dict)]; print(bad); sys.exit(1 if bad else 0)"

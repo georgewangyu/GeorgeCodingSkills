@@ -19,7 +19,7 @@ Task arrives
     ├── Don't know what you want yet? ──────→ grill-me (upstream: interview-me)
     ├── Have a rough concept, need variants? → brainstorm (upstream: idea-refine)
     ├── New project/feature/change? ──→ spec (upstream: spec-driven-development)
-    ├── No quality bar written down? ──→ constraint-driven-development
+    ├── No quality bar written down? ──→ constraints (upstream: constraint-driven-development)
     ├── Have a spec, need tasks? ──────→ planning-and-task-breakdown
     ├── Implementing code? ────────────→ incremental-implementation
     │   ├── UI work? ─────────────────→ frontend-ui-engineering
@@ -200,8 +200,9 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Don't know what you want yet, or want a plan grilled? -> `grill-me` (replaces upstream interview-me). [bl: strong]
 - Have a rough idea, or more than one way to build it? -> `brainstorm` (replaces upstream idea-refine). [bl: strong]
 - Direction settled, about to build or hand off? -> `spec` (replaces upstream spec-driven-development). [bl: strong]
+- Need the quality bar, or agents keep making the same mistakes? -> `constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first three Skill Discovery branches (point at `grill-me`, `brainstorm` and `spec`), the define-phase names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first four Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec` and `constraints`), the define-phase names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
