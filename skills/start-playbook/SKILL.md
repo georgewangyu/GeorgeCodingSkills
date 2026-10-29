@@ -23,8 +23,8 @@ Task arrives
     ├── Have a spec, need tasks? ──────→ plan (upstream: planning-and-task-breakdown)
     ├── Implementing code? ────────────→ build (upstream: incremental-implementation)
     │   ├── UI work? ─────────────────→ frontend-ui-engineering
-    │   ├── API work? ────────────────→ api-and-interface-design
-    │   ├── Need better context? ─────→ context-engineering
+    │   ├── API work? ────────────────→ interfaces (upstream: api-and-interface-design)
+    │   ├── Need better context? ─────→ context (upstream: context-engineering)
     │   ├── Need doc-verified code? ───→ source-driven (upstream: source-driven-development)
     │   └── Stakes high / unfamiliar code? ──→ doubt-driven-development
     ├── Writing/running tests? ────────→ test-driven-development
@@ -148,7 +148,7 @@ For a complete feature, the typical skill sequence is:
 2.  brainstorm                  → Refine vague ideas into a decision
 3.  spec                        → Define what we're building
 4.  plan                        → Break into verifiable chunks
-5.  context-engineering         → Load the right context
+5.  context                     → Load the right context
 6.  source-driven              → Verify against the real source
 7.  build                      → Build slice by slice
 8.  observability-and-instrumentation → Instrument as you build (runs parallel with 7-9, not after)
@@ -175,9 +175,9 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Build | build | One slice at a time: PR, CI green, done check, review, then the next |
 | Build | source-driven | Read and cite the real source (installed code, versioned docs) before implementing |
 | Build | doubt-driven-development | Adversarial fresh-context review of every non-trivial decision |
-| Build | context-engineering | Right context at the right time |
+| Build | context | Load, keep, hand off: briefs carry the plan, follow-ups reuse the worker |
 | Build | frontend-ui-engineering | Production-quality UI with accessibility |
-| Build | api-and-interface-design | Stable interfaces with clear contracts |
+| Build | interfaces | Deep seams, declared behavior, additive changes, timeouts, ordering and overload as contract |
 | Verify | test-driven-development | Failing test first, then make it pass |
 | Verify | browser-testing-with-devtools | Chrome DevTools MCP for runtime verification |
 | Verify | debugging-and-error-recovery | Reproduce → localize → fix → guard |
@@ -204,8 +204,10 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Ready to implement a slice? -> `build` (replaces upstream incremental-implementation). [bl: strong]
 - About to use an API, default or framework behavior from memory? -> `source-driven` (replaces upstream source-driven-development). [bl: strong]
 - Need the quality bar, or agents keep making the same mistakes? -> `constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
+- Designing an API, a seam, a schema or a config key? -> `interfaces` (replaces upstream api-and-interface-design). [bl: strong]
+- Loading context, writing a brief, handing off or resuming? -> `context` (replaces upstream context-engineering). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`.
