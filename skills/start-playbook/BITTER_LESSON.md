@@ -28,5 +28,7 @@ candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_le
 | Have a rough idea | strong | Routing pointer to brainstorm. Could be learned from routing history. | 2027-04-26 | | |
 | Direction settled | strong | Routing pointer to spec. Could be learned from routing history. | 2027-04-27 | | |
 | Have a spec, and it needs | strong | Routing pointer to plan. Could be learned from routing history. | 2027-04-29 | | |
+| Ready to implement a slice | strong | Routing pointer to build. Could be learned from routing history. | 2027-04-29 | | |
+| About to use an API | strong | Routing pointer to source-driven. Could be learned from routing history. | 2027-04-29 | | |
 | Need the quality bar | strong | Routing pointer to constraints and mistake-miner. Could be learned from routing history. | 2027-04-29 | | |
 | Evaluating a claim | strong | Routing pointer to the principles group. Could be learned from routing history. | 2027-04-26 | | |

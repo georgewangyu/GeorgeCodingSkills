@@ -21,11 +21,11 @@ Task arrives
     ├── New project/feature/change? ──→ spec (upstream: spec-driven-development)
     ├── No quality bar written down? ──→ constraints (upstream: constraint-driven-development)
     ├── Have a spec, need tasks? ──────→ plan (upstream: planning-and-task-breakdown)
-    ├── Implementing code? ────────────→ incremental-implementation
+    ├── Implementing code? ────────────→ build (upstream: incremental-implementation)
     │   ├── UI work? ─────────────────→ frontend-ui-engineering
     │   ├── API work? ────────────────→ api-and-interface-design
     │   ├── Need better context? ─────→ context-engineering
-    │   ├── Need doc-verified code? ───→ source-driven-development
+    │   ├── Need doc-verified code? ───→ source-driven (upstream: source-driven-development)
     │   └── Stakes high / unfamiliar code? ──→ doubt-driven-development
     ├── Writing/running tests? ────────→ test-driven-development
     │   └── Browser-based? ───────────→ browser-testing-with-devtools
@@ -135,7 +135,7 @@ These are the subtle errors that look like productivity but create problems:
 
 2. **Skills are workflows, not suggestions.** Follow the steps in order. Don't skip verification steps. [bl: soft]
 
-3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec` → `plan` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
+3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec` → `plan` → `build` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
 
 4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec`.
 
@@ -149,8 +149,8 @@ For a complete feature, the typical skill sequence is:
 3.  spec                        → Define what we're building
 4.  plan                        → Break into verifiable chunks
 5.  context-engineering         → Load the right context
-6.  source-driven-development   → Verify against official docs
-7.  incremental-implementation  → Build slice by slice
+6.  source-driven              → Verify against the real source
+7.  build                      → Build slice by slice
 8.  observability-and-instrumentation → Instrument as you build (runs parallel with 7-9, not after)
 9.  doubt-driven-development    → Cross-examine non-trivial decisions in-flight
 10. test-driven-development     → Prove each slice works
@@ -172,8 +172,8 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Define | brainstorm | Ground, challenge premises, diverge across axes, converge to a recommended decision |
 | Define | spec | Brief by default (goal, done check, proof), full design doc when earned |
 | Plan | plan | Ordered vertical slices, each one PR, one ticket, one worker brief |
-| Build | incremental-implementation | Thin vertical slices, test each before expanding |
-| Build | source-driven-development | Verify against official docs before implementing |
+| Build | build | One slice at a time: PR, CI green, done check, review, then the next |
+| Build | source-driven | Read and cite the real source (installed code, versioned docs) before implementing |
 | Build | doubt-driven-development | Adversarial fresh-context review of every non-trivial decision |
 | Build | context-engineering | Right context at the right time |
 | Build | frontend-ui-engineering | Production-quality UI with accessibility |
@@ -201,9 +201,11 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Have a rough idea, or more than one way to build it? -> `brainstorm` (replaces upstream idea-refine). [bl: strong]
 - Direction settled, about to build or hand off? -> `spec` (replaces upstream spec-driven-development). [bl: strong]
 - Have a spec, and it needs more than one PR? -> `plan` (replaces upstream planning-and-task-breakdown). [bl: strong]
+- Ready to implement a slice? -> `build` (replaces upstream incremental-implementation). [bl: strong]
+- About to use an API, default or framework behavior from memory? -> `source-driven` (replaces upstream source-driven-development). [bl: strong]
 - Need the quality bar, or agents keep making the same mistakes? -> `constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`), the define-phase and plan names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`.
