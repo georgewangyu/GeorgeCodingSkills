@@ -35,6 +35,7 @@ candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_le
 | Writing or fixing tests | strong | Routing pointer to test-driven-development. Could be learned from routing history. | 2027-04-30 | | |
 | Checking UI in a real browser | strong | Routing pointer to browser-testing. Could be learned from routing history. | 2027-04-30 | | |
 | Something broke, or an alarm | strong | Routing pointer to debugging-and-error-recovery. Could be learned from routing history. | 2027-04-30 | | |
+| Reviewing a change, or got review comments | strong | Routing pointer to code-review-and-quality and the three Review skills. Could be learned from routing history. | 2027-04-30 | | |
 | Need the quality bar | strong | Routing pointer to quality-constraints and mistake-miner. Could be learned from routing history. | 2027-04-29 | | |
 | Designing an API | strong | Routing pointer to api-and-interface-design. Could be learned from routing history. | 2027-04-29 | | |
 | Loading context | strong | Routing pointer to context-engineering. Could be learned from routing history. | 2027-04-29 | | |
