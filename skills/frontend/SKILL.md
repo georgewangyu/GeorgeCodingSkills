@@ -56,7 +56,7 @@ A mixed page is classified per section.
   - a `→` appended to buttons and links, monospace for small labels.
   Each is fine when the brief asks for it. Do not reach for one by default.
 - Spend boldness in one place. Before you finish, remove one accessory.
-- When the look is open and matters (a launch page, a demo, a new Showroom view), borrow from a dedicated design skill instead of growing this one: [Impeccable](https://github.com/pbakaus/impeccable) (polish, bolder, critique), [taste-skill](https://github.com/Leonxlnx/taste-skill) (art direction, reference images), [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (styles, palettes, font pairings), and [Anthropic frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design).
+- When the look is open and matters (a launch page, a demo, a new product page), borrow from a dedicated design skill instead of growing this one: [Impeccable](https://github.com/pbakaus/impeccable) (polish, bolder, critique), [taste-skill](https://github.com/Leonxlnx/taste-skill) (art direction, reference images), [UI/UX Pro Max](https://github.com/nextlevelbuilder/ui-ux-pro-max-skill) (styles, palettes, font pairings), and [Anthropic frontend-design](https://github.com/anthropics/skills/tree/main/skills/frontend-design).
 - Copy is utility language in sentence case. A button says what happens ("Save changes", not "Submit"). An action keeps its name through the flow ("Publish" then "Published"). Errors say what happened and how to fix it, with no apology.
 - Charts, sparklines, meters and stat tiles: your dataviz skill. Where the destination renders live charts, hand it the rows, not a picture.
 
