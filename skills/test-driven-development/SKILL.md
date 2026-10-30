@@ -112,6 +112,8 @@ Rules that follow:
 
 Coverage is a gate, not the goal. Meet the gate with tests at the seams. Read which check failed before you write a line.
 
+The gate is the floor. About 85% new-line coverage is a soft ceiling: go past the gate toward it only with tests that each catch a real failure, and stop when the next test would only cover lines. Never 85% for its own sake.
+
 - **New-line coverage below the threshold.** The new lines are not reached. Read why: usually a test never gets to the branch, not a missing test. Add the seam test that reaches it.
 - **A whole-project ratchet.** It can fail with new lines fully covered: it is noisy between identical runs and falls when a refactor deletes well-covered code. The answer is a seam test or a recorded override with the reason. Never padding.
 
