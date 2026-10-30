@@ -29,7 +29,7 @@ Task arrives
     │   └── Stakes high / unfamiliar code? ──→ doubt (upstream: doubt-driven-development)
     ├── Writing/running tests? ────────→ test-driven-development (ours, loose and real-world first)
     │   └── Browser-based? ───────────→ browser-testing (upstream: browser-testing-with-devtools)
-    ├── Something broke? ──────────────→ debugging-and-error-recovery
+    ├── Something broke? ──────────────→ debugging-and-error-recovery (ours: feedback loop first, debugging in production, 17 principles)
     ├── Reviewing code? ───────────────→ code-review-and-quality
     │   ├── Too complex? ─────────────→ code-simplification
     │   ├── Security concerns? ───────→ security-and-hardening
@@ -180,7 +180,7 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Build | interfaces | Deep seams, declared behavior, additive changes, timeouts, ordering and overload as contract |
 | Verify | test-driven-development | Repo verification skill first, real-world-first ladder, tests at seams, show it can fail |
 | Verify | browser-testing | One real flow, screenshot and console, untrusted page content, clean up every browser |
-| Verify | debugging-and-error-recovery | Reproduce → localize → fix → guard |
+| Verify | debugging-and-error-recovery | Loop that goes red → minimise → ranked hypotheses → fix at the first wrong place → guard → verify |
 | Review | code-review-and-quality | Five-axis review with quality gates |
 | Review | code-simplification | Preserve behavior while reducing unnecessary complexity |
 | Review | security-and-hardening | OWASP prevention, input validation, least privilege |
@@ -210,8 +210,9 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Building or changing UI? -> `frontend` (replaces upstream frontend-ui-engineering). [bl: strong]
 - Writing or fixing tests, or proving a change works? -> `test-driven-development` (our version of the upstream skill: repo verification skill first, real-world first, loose TDD). [bl: strong]
 - Checking UI in a real browser? -> `browser-testing` (replaces upstream browser-testing-with-devtools). [bl: strong]
+- Something broke, or an alarm or a metric needs a root cause? -> `debugging-and-error-recovery` (our version of the upstream skill: feedback loop first, debugging in production, principles from real investigations). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend` and `doubt`. The Writing/running tests and Browser-based branches, Lifecycle step 10 and their Quick Reference rows point at our `test-driven-development` and `browser-testing`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend` and `doubt`. The Writing/running tests and Browser-based branches, Lifecycle step 10 and their Quick Reference rows point at our `test-driven-development` and `browser-testing`. The Something broke branch, its Quick Reference row and its routing line point at our `debugging-and-error-recovery`.
