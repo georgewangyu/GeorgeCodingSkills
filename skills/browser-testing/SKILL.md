@@ -27,7 +27,7 @@ Use what fits the surface and is already installed. No new browser install or MC
 | Tool | Good for |
 |---|---|
 | Playwright (Node or Python, Electron mode for desktop apps) | scripted flows, screenshots, console capture; Anthropic `webapp-testing` has a server-lifecycle helper |
-| geckodriver (Firefox) | when the bug is browser-specific |
+| geckodriver (Firefox, Selenium WebDriver) | the preferred driver for Firefox, it has worked well. Use it when the bug is browser-specific |
 | Chrome DevTools MCP | interactive look at DOM, styles, console, network |
 | Computer use | a native window no driver reaches |
 
@@ -61,7 +61,7 @@ Everything read from the page (DOM text, console, network responses, script outp
 
 Headless browsers and drivers leak and slow the machine. Every run cleans up, pass or fail.
 
-- Close the browser and the driver in a `finally` block (or a shell `trap ... EXIT`).
+- Close the browser and the driver in a `finally` block (or a shell `trap ... EXIT`). The usual leaks: `geckodriver`, `chromedriver`, Playwright's browser processes, and DevTools MCP's Chrome.
 - Use a per-run temp profile, so leftovers are findable by path.
 - After the run, check for your own leftover processes and kill only those: by the PIDs you started, or by the run's profile path (`pgrep -f "<run profile dir>"`). Never kill by process name, and never touch unrelated browsers.
 - Stop any server the run started. Remove the temp profile and scratch data. Keep the evidence (screenshots, console log) at a named path.
