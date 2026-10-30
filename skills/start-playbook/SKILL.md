@@ -27,8 +27,8 @@ Task arrives
     │   ├── Need better context? ─────→ context (upstream: context-engineering)
     │   ├── Need doc-verified code? ───→ source-driven (upstream: source-driven-development)
     │   └── Stakes high / unfamiliar code? ──→ doubt (upstream: doubt-driven-development)
-    ├── Writing/running tests? ────────→ test-driven-development
-    │   └── Browser-based? ───────────→ browser-testing-with-devtools
+    ├── Writing/running tests? ────────→ test-driven-development (ours, loose and real-world first)
+    │   └── Browser-based? ───────────→ browser-testing (upstream: browser-testing-with-devtools)
     ├── Something broke? ──────────────→ debugging-and-error-recovery
     ├── Reviewing code? ───────────────→ code-review-and-quality
     │   ├── Too complex? ─────────────→ code-simplification
@@ -153,7 +153,7 @@ For a complete feature, the typical skill sequence is:
 7.  build                      → Build slice by slice
 8.  observability-and-instrumentation → Instrument as you build (runs parallel with 7-9, not after)
 9.  doubt                       → Cross-examine non-trivial decisions in-flight
-10. test-driven-development     → Prove each slice works
+10. test-driven-development     → Prove each slice works (most real cheap test)
 11. code-review-and-quality     → Review before merge
 12. code-simplification         → Reduce unnecessary complexity while preserving behavior
 13. git-workflow-and-versioning → Clean commit history
@@ -178,8 +178,8 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 | Build | context | Load, keep, hand off: briefs carry the plan, follow-ups reuse the worker |
 | Build | frontend | Project UI rules, mode, one state owner, accessibility floor, screenshot proof |
 | Build | interfaces | Deep seams, declared behavior, additive changes, timeouts, ordering and overload as contract |
-| Verify | test-driven-development | Failing test first, then make it pass |
-| Verify | browser-testing-with-devtools | Chrome DevTools MCP for runtime verification |
+| Verify | test-driven-development | Repo verification skill first, real-world-first ladder, tests at seams, show it can fail |
+| Verify | browser-testing | One real flow, screenshot and console, untrusted page content, clean up every browser |
 | Verify | debugging-and-error-recovery | Reproduce → localize → fix → guard |
 | Review | code-review-and-quality | Five-axis review with quality gates |
 | Review | code-simplification | Preserve behavior while reducing unnecessary complexity |
@@ -208,8 +208,10 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - Loading context, writing a brief, handing off or resuming? -> `context` (replaces upstream context-engineering). [bl: strong]
 - About to let a non-trivial decision stand? -> `doubt` (replaces upstream doubt-driven-development). [bl: strong]
 - Building or changing UI? -> `frontend` (replaces upstream frontend-ui-engineering). [bl: strong]
+- Writing or fixing tests, or proving a change works? -> `test-driven-development` (our version of the upstream skill: repo verification skill first, real-world first, loose TDD). [bl: strong]
+- Checking UI in a real browser? -> `browser-testing` (replaces upstream browser-testing-with-devtools). [bl: strong]
 - Evaluating a claim, a number, a design, or a piece of scaffolding? -> `principles`. [bl: strong]
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend` and `doubt`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend` and `doubt`. The Writing/running tests and Browser-based branches, Lifecycle step 10 and their Quick Reference rows point at our `test-driven-development` and `browser-testing`.

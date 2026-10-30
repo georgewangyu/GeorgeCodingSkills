@@ -13,3 +13,5 @@ skills/interfaces
 skills/context
 skills/doubt
 skills/frontend
+skills/test-driven-development
+skills/browser-testing
