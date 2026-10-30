@@ -1,4 +1,4 @@
-# Bitter lesson: context
+# Bitter lesson: context-engineering
 
 Full analysis for the inline `[bl: ...]` tags in `SKILL.md`. Read only when
 evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,

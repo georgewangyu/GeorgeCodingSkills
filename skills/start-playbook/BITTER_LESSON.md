@@ -26,16 +26,16 @@ candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_le
 | Comments: comment cleanup only | strong | Protocol. A diff-scoped comment reviewer can enforce it. | 2027-04-26 | | |
 | Don't know what you want yet | strong | Routing pointer to grill-me. Could be learned from routing history. | 2027-04-26 | | |
 | Have a rough idea | strong | Routing pointer to brainstorm. Could be learned from routing history. | 2027-04-26 | | |
-| Direction settled | strong | Routing pointer to spec. Could be learned from routing history. | 2027-04-27 | | |
-| Have a spec, and it needs | strong | Routing pointer to plan. Could be learned from routing history. | 2027-04-29 | | |
-| Ready to implement a slice | strong | Routing pointer to build. Could be learned from routing history. | 2027-04-29 | | |
-| About to use an API | strong | Routing pointer to source-driven. Could be learned from routing history. | 2027-04-29 | | |
-| About to let a non-trivial decision | strong | Routing pointer to doubt. Could be learned from routing history. | 2027-04-29 | | |
-| Building or changing UI | strong | Routing pointer to frontend. Could be learned from routing history. | 2027-04-29 | | |
+| Direction settled | strong | Routing pointer to spec-driven-development. Could be learned from routing history. | 2027-04-27 | | |
+| Have a spec, and it needs | strong | Routing pointer to planning-and-task-breakdown. Could be learned from routing history. | 2027-04-29 | | |
+| Ready to implement a slice | strong | Routing pointer to incremental-implementation. Could be learned from routing history. | 2027-04-29 | | |
+| About to use an API | strong | Routing pointer to source-driven-development. Could be learned from routing history. | 2027-04-29 | | |
+| About to let a non-trivial decision | strong | Routing pointer to doubt-driven-review. Could be learned from routing history. | 2027-04-29 | | |
+| Building or changing UI | strong | Routing pointer to frontend-ui-engineering. Could be learned from routing history. | 2027-04-29 | | |
 | Writing or fixing tests | strong | Routing pointer to test-driven-development. Could be learned from routing history. | 2027-04-30 | | |
 | Checking UI in a real browser | strong | Routing pointer to browser-testing. Could be learned from routing history. | 2027-04-30 | | |
 | Something broke, or an alarm | strong | Routing pointer to debugging-and-error-recovery. Could be learned from routing history. | 2027-04-30 | | |
-| Need the quality bar | strong | Routing pointer to constraints and mistake-miner. Could be learned from routing history. | 2027-04-29 | | |
-| Designing an API | strong | Routing pointer to interfaces. Could be learned from routing history. | 2027-04-29 | | |
-| Loading context | strong | Routing pointer to context. Could be learned from routing history. | 2027-04-29 | | |
+| Need the quality bar | strong | Routing pointer to quality-constraints and mistake-miner. Could be learned from routing history. | 2027-04-29 | | |
+| Designing an API | strong | Routing pointer to api-and-interface-design. Could be learned from routing history. | 2027-04-29 | | |
+| Loading context | strong | Routing pointer to context-engineering. Could be learned from routing history. | 2027-04-29 | | |
 | Evaluating a claim | strong | Routing pointer to the principles group. Could be learned from routing history. | 2027-04-26 | | |

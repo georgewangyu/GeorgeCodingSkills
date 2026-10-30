@@ -1,4 +1,4 @@
-# Bitter lesson: plan
+# Bitter lesson: planning-and-task-breakdown
 
 Full analysis for the inline `[bl: ...]` tags in `SKILL.md`. Read only when
 evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,

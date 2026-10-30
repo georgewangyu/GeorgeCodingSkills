@@ -18,15 +18,15 @@ Task arrives
     │
     ├── Don't know what you want yet? ──────→ grill-me (upstream: interview-me)
     ├── Have a rough concept, need variants? → brainstorm (upstream: idea-refine)
-    ├── New project/feature/change? ──→ spec (upstream: spec-driven-development)
-    ├── No quality bar written down? ──→ constraints (upstream: constraint-driven-development)
-    ├── Have a spec, need tasks? ──────→ plan (upstream: planning-and-task-breakdown)
-    ├── Implementing code? ────────────→ build (upstream: incremental-implementation)
-    │   ├── UI work? ─────────────────→ frontend (upstream: frontend-ui-engineering)
-    │   ├── API work? ────────────────→ interfaces (upstream: api-and-interface-design)
-    │   ├── Need better context? ─────→ context (upstream: context-engineering)
-    │   ├── Need doc-verified code? ───→ source-driven (upstream: source-driven-development)
-    │   └── Stakes high / unfamiliar code? ──→ doubt (upstream: doubt-driven-development)
+    ├── New project/feature/change? ──→ spec-driven-development
+    ├── No quality bar written down? ──→ quality-constraints (upstream: constraint-driven-development)
+    ├── Have a spec, need tasks? ──────→ planning-and-task-breakdown
+    ├── Implementing code? ────────────→ incremental-implementation
+    │   ├── UI work? ─────────────────→ frontend-ui-engineering
+    │   ├── API work? ────────────────→ api-and-interface-design
+    │   ├── Need better context? ─────→ context-engineering
+    │   ├── Need doc-verified code? ───→ source-driven-development
+    │   └── Stakes high / unfamiliar code? ──→ doubt-driven-review (upstream: doubt-driven-development)
     ├── Writing/running tests? ────────→ test-driven-development (ours, loose and real-world first)
     │   └── Browser-based? ───────────→ browser-testing (upstream: browser-testing-with-devtools)
     ├── Something broke? ──────────────→ debugging-and-error-recovery (ours: feedback loop first, debugging in production, 17 principles)
@@ -135,9 +135,9 @@ These are the subtle errors that look like productivity but create problems:
 
 2. **Skills are workflows, not suggestions.** Follow the steps in order. Don't skip verification steps. [bl: soft]
 
-3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec` → `plan` → `build` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
+3. **Multiple skills can apply.** A feature implementation might involve `grill-me` → `brainstorm` → `spec-driven-development` → `planning-and-task-breakdown` → `incremental-implementation` → `test-driven-development` → `code-review-and-quality` → `code-simplification` → `shipping-and-launch` in sequence.
 
-4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec`.
+4. **When in doubt, start with a spec.** If the task is non-trivial and there's no spec, begin with `spec-driven-development`.
 
 ## Lifecycle Sequence [bl: soft]
 
@@ -146,13 +146,13 @@ For a complete feature, the typical skill sequence is:
 ```
 1.  grill-me                    → Extract what the user actually wants
 2.  brainstorm                  → Refine vague ideas into a decision
-3.  spec                        → Define what we're building
-4.  plan                        → Break into verifiable chunks
-5.  context                     → Load the right context
-6.  source-driven              → Verify against the real source
-7.  build                      → Build slice by slice
+3.  spec-driven-development     → Define what we're building
+4.  planning-and-task-breakdown → Break into verifiable chunks
+5.  context-engineering         → Load the right context
+6.  source-driven-development   → Verify against the real source
+7.  incremental-implementation  → Build slice by slice
 8.  observability-and-instrumentation → Instrument as you build (runs parallel with 7-9, not after)
-9.  doubt                       → Cross-examine non-trivial decisions in-flight
+9.  doubt-driven-review         → Cross-examine non-trivial decisions in-flight
 10. test-driven-development     → Prove each slice works (most real cheap test)
 11. code-review-and-quality     → Review before merge
 12. code-simplification         → Reduce unnecessary complexity while preserving behavior
@@ -170,14 +170,14 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 |-------|-------|-----------------|
 | Define | grill-me | Surface what the user actually wants before any plan, spec, or code exists |
 | Define | brainstorm | Ground, challenge premises, diverge across axes, converge to a recommended decision |
-| Define | spec | Brief by default (goal, done check, proof), full design doc when earned |
-| Plan | plan | Ordered vertical slices, each one PR, one ticket, one worker brief |
-| Build | build | One slice at a time: PR, CI green, done check, review, then the next |
-| Build | source-driven | Read and cite the real source (installed code, versioned docs) before implementing |
-| Build | doubt | Route the artifact and its contract to a fresh reviewer; two models for one-way doors |
-| Build | context | Load, keep, hand off: briefs carry the plan, follow-ups reuse the worker |
-| Build | frontend | Project UI rules, mode, one state owner, accessibility floor, screenshot proof |
-| Build | interfaces | Deep seams, declared behavior, additive changes, timeouts, ordering and overload as contract |
+| Define | spec-driven-development | Brief by default (goal, done check, proof), full design doc when earned |
+| Plan | planning-and-task-breakdown | Ordered vertical slices, each one PR, one ticket, one worker brief |
+| Build | incremental-implementation | One slice at a time: PR, CI green, done check, review, then the next |
+| Build | source-driven-development | Read and cite the real source (installed code, versioned docs) before implementing |
+| Build | doubt-driven-review | Route the artifact and its contract to a fresh reviewer; two models for one-way doors |
+| Build | context-engineering | Load, keep, hand off: briefs carry the plan, follow-ups reuse the worker |
+| Build | frontend-ui-engineering | Project UI rules, mode, one state owner, accessibility floor, screenshot proof |
+| Build | api-and-interface-design | Deep seams, declared behavior, additive changes, timeouts, ordering and overload as contract |
 | Verify | test-driven-development | Repo verification skill first, real-world-first ladder, tests at seams, show it can fail |
 | Verify | browser-testing | One real flow, screenshot and console, untrusted page content, clean up every browser |
 | Verify | debugging-and-error-recovery | Loop that goes red → minimise → ranked hypotheses → fix at the first wrong place → guard → verify |
@@ -199,15 +199,15 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 - **Comments:** comment cleanup only touches comments the diff adds or changes, which keeps rule 5 ("Remove comments you don't understand") intact. [bl: strong]
 - Don't know what you want yet, or want a plan grilled? -> `grill-me` (replaces upstream interview-me). [bl: strong]
 - Have a rough idea, or more than one way to build it? -> `brainstorm` (replaces upstream idea-refine). [bl: strong]
-- Direction settled, about to build or hand off? -> `spec` (replaces upstream spec-driven-development). [bl: strong]
-- Have a spec, and it needs more than one PR? -> `plan` (replaces upstream planning-and-task-breakdown). [bl: strong]
-- Ready to implement a slice? -> `build` (replaces upstream incremental-implementation). [bl: strong]
-- About to use an API, default or framework behavior from memory? -> `source-driven` (replaces upstream source-driven-development). [bl: strong]
-- Need the quality bar, or agents keep making the same mistakes? -> `constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
-- Designing an API, a seam, a schema or a config key? -> `interfaces` (replaces upstream api-and-interface-design). [bl: strong]
-- Loading context, writing a brief, handing off or resuming? -> `context` (replaces upstream context-engineering). [bl: strong]
-- About to let a non-trivial decision stand? -> `doubt` (replaces upstream doubt-driven-development). [bl: strong]
-- Building or changing UI? -> `frontend` (replaces upstream frontend-ui-engineering). [bl: strong]
+- Direction settled, about to build or hand off? -> `spec-driven-development` (our version of the upstream skill). [bl: strong]
+- Have a spec, and it needs more than one PR? -> `planning-and-task-breakdown` (our version of the upstream skill). [bl: strong]
+- Ready to implement a slice? -> `incremental-implementation` (our version of the upstream skill). [bl: strong]
+- About to use an API, default or framework behavior from memory? -> `source-driven-development` (our version of the upstream skill). [bl: strong]
+- Need the quality bar, or agents keep making the same mistakes? -> `quality-constraints` (top-down, replaces upstream constraint-driven-development) and `mistake-miner` (bottom-up, clusters repeated mistakes weekly). [bl: strong]
+- Designing an API, a seam, a schema or a config key? -> `api-and-interface-design` (our version of the upstream skill). [bl: strong]
+- Loading context, writing a brief, handing off or resuming? -> `context-engineering` (our version of the upstream skill). [bl: strong]
+- About to let a non-trivial decision stand? -> `doubt-driven-review` (replaces upstream doubt-driven-development). [bl: strong]
+- Building or changing UI? -> `frontend-ui-engineering` (our version of the upstream skill). [bl: strong]
 - Writing or fixing tests, or proving a change works? -> `test-driven-development` (our version of the upstream skill: repo verification skill first, real-world first, loose TDD). [bl: strong]
 - Checking UI in a real browser? -> `browser-testing` (replaces upstream browser-testing-with-devtools). [bl: strong]
 - Something broke, or an alarm or a metric needs a root cause? -> `debugging-and-error-recovery` (our version of the upstream skill: feedback loop first, debugging in production, principles from real investigations). [bl: strong]
@@ -215,4 +215,4 @@ Not every task needs every skill. A bug fix might only need: `debugging-and-erro
 
 ## Sources
 
-Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec`, `constraints` and `plan`) plus the `build` and `source-driven` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec`, `plan`, `build`, `source-driven`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `interfaces` and `context`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend` and `doubt`. The Writing/running tests and Browser-based branches, Lifecycle step 10 and their Quick Reference rows point at our `test-driven-development` and `browser-testing`. The Something broke branch, its Quick Reference row and its routing line point at our `debugging-and-error-recovery`.
+Source: adapted from [addyosmani/agent-skills `skills/using-agent-skills`](https://github.com/addyosmani/agent-skills/blob/aeac41d4d005999432bb7312f7ff06383a91d59d/skills/using-agent-skills/SKILL.md) at `aeac41d` (MIT, see `THIRD_PARTY_LICENSE-agent-skills`). The upstream text is unchanged except rule 2 (rewritten, see BITTER_LESSON.md), the first five Skill Discovery branches (point at `grill-me`, `brainstorm`, `spec-driven-development`, `quality-constraints` and `planning-and-task-breakdown`) plus the `incremental-implementation` and `source-driven-development` branches, the define-phase, plan and build names in rules 3 and 4, the Lifecycle Sequence and the Quick Reference (`grill-me`, `brainstorm`, `spec-driven-development`, `planning-and-task-breakdown`, `incremental-implementation`, `source-driven-development`), the Definition of Done link and the `[bl: ...]` tags; see `BITTER_LESSON.md`. The API work and Need better context branches, Lifecycle step 5 and their Quick Reference rows point at `api-and-interface-design` and `context-engineering`. The UI work and Stakes high branches, Lifecycle step 9 and their Quick Reference rows point at `frontend-ui-engineering` and `doubt-driven-review`. The Writing/running tests and Browser-based branches, Lifecycle step 10 and their Quick Reference rows point at our `test-driven-development` and `browser-testing`. The Something broke branch, its Quick Reference row and its routing line point at our `debugging-and-error-recovery`. On 2026-10-30 the short skill names were renamed to the upstream names (`spec-driven-development`, `planning-and-task-breakdown`, `incremental-implementation`, `source-driven-development`, `api-and-interface-design`, `context-engineering`, `frontend-ui-engineering`), except `doubt-driven-review` (upstream `doubt-driven-development`) and `quality-constraints` (upstream `constraint-driven-development`). The old short names are one-release redirect skills.

@@ -171,7 +171,7 @@ After a deploy moved clients to a new connection mode, two environments showed t
 
 ## Related
 
-- `test-driven-development` for the regression test. `principles-scientific-method` for hypotheses, predictions and confidence labels. `principles-first-principles` for bounding a number. `doubt` to cross-examine a diagnosis before a one-way fix. `context` for a handoff.
+- `test-driven-development` for the regression test. `principles-scientific-method` for hypotheses, predictions and confidence labels. `principles-first-principles` for bounding a number. `doubt-driven-review` to cross-examine a diagnosis before a one-way fix. `context-engineering` for a handoff.
 
 ## Sources
 

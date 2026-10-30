@@ -1,4 +1,4 @@
-# Bitter lesson: source-driven
+# Bitter lesson: source-driven-development
 
 Full analysis for the inline `[bl: ...]` tags in `SKILL.md`. Read only when
 evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,

@@ -1,4 +1,4 @@
-# Bitter lesson: frontend
+# Bitter lesson: frontend-ui-engineering
 
 Full analysis for the inline `[bl: ...]` tags in `SKILL.md`. Read only when
 evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,
@@ -16,4 +16,4 @@ candidate to expire. Checker: `skills/principles-bitter-lesson`.
 | 4. Tokens, look and copy | strong | Taste calibration against generated defaults. Will drift as model defaults change; review the default list each half year. | 2027-04-29 | | |
 | 5. Accessibility floor | invariant | External standard (WCAG 2.1 AA) and a user promise: aria-modal, focus and labels are contracts with assistive tech. | | | |
 | 6. Verify in the running app | invariant | Feedback signal: only the rendered screen proves a UI change. Tests and green builds do not. | | | |
-| 7. Doubt the risky ones | soft | Routing nudge to doubt. Candidate to expire once doubt's own trigger list catches UI decisions. | 2027-01-29 | doubt is invoked on UI changes without this pointer. | |
+| 7. Doubt the risky ones | soft | Routing nudge to doubt-driven-review. Candidate to expire once doubt-driven-review's own trigger list catches UI decisions. | 2027-01-29 | doubt-driven-review is invoked on UI changes without this pointer. | |

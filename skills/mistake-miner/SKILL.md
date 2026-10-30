@@ -16,7 +16,7 @@ Do not fix each mistake as it happens. Write it down, and look for the pattern o
 Not for:
 
 - Fixing a mistake. The miner only reads and appends. Fixes go through pstack `correct` (code, lint, tests) or an agent-rules or skill edit, as a separate task.
-- Setting the bar up front. That is `constraints`.
+- Setting the bar up front. That is `quality-constraints`.
 
 Why a buffer: when every bad pattern spawns a fix, the fixer is in execution mode and misses the shape. A queue of artifacts lets a human (or a chief-of-staff agent) see that ten findings are one class, and fix the class once.
 

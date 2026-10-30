@@ -99,7 +99,7 @@ On a correction, fold it in and restate. Do not act on the intent, write a spec,
 
 ## Output [bl: strong]
 
-The confirmed intent block. Then offer to save it to `docs/intent/<topic>.md`, and offer the next step (`spec`, then `plan` for the PRs and tickets). Save only if they agree. Stop the turn after the offer.
+The confirmed intent block. Then offer to save it to `docs/intent/<topic>.md`, and offer the next step (`spec-driven-development`, then `planning-and-task-breakdown` for the PRs and tickets). Save only if they agree. Stop the turn after the offer.
 
 ## Non-interactive runs [bl: strong]
 

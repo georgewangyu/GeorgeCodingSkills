@@ -1,4 +1,4 @@
-# Bitter lesson: build
+# Bitter lesson: incremental-implementation
 
 Full analysis for the inline `[bl: ...]` tags in `SKILL.md`. Read only when
 evaluating the skill (cleanup, `report`, `ablate`). One row per tagged item,
@@ -9,7 +9,7 @@ candidate to expire. Checker: `skills/principles-bitter-lesson`.
 
 | Item | Tag | Why | Review | Delete when | Ablation |
 |---|---|---|---|---|---|
-| Read the slice first | strong | Protocol with `plan`: the slice fields and blockers are the contract. A smarter model still cannot see a deploy edge it never read. | 2027-04-29 | | |
+| Read the slice first | strong | Protocol with `planning-and-task-breakdown`: the slice fields and blockers are the contract. A smarter model still cannot see a deploy edge it never read. | 2027-04-29 | | |
 | The slice loop | invariant | Feedback signal: CI on the change is the gate, and a slice is done only when its check passed (pstack sequence-verifiable-units). | | | |
 | Who builds each slice | strong | Fresh context per slice keeps each worker focused and the controller lean (superpowers). Longer context may shrink the need; parallel workers on shared files stays a real hazard. | 2027-04-29 | | |
 | Rule 0: simplicity first | strong | Heuristic with strong evidence (Addy, pstack laziness and subtract). Could become a learned example or a diff-size check in review. | 2027-04-29 | | |

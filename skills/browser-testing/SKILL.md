@@ -96,7 +96,7 @@ A desktop app added a themed edition on top of a core app. A fresh install rende
 
 ## Related
 
-- `frontend` (its verify step sends its proof here). `test-driven-development` for the logic tests and for pinning a browser-found bug.
+- `frontend-ui-engineering` (its verify step sends its proof here). `test-driven-development` for the logic tests and for pinning a browser-found bug.
 
 ## Sources
 

@@ -9,7 +9,7 @@ Most suites carry too many low-value tests. A test earns its place by catching a
 
 ## When to use
 
-- New logic or a changed behavior (`build` puts the tests in the same commit as the change).
+- New logic or a changed behavior (`incremental-implementation` puts the tests in the same commit as the change).
 - A bug report: prove-it first, when the repro is cheap.
 - A coverage gate failure, a review that asks for a test, or a test file full of near-duplicates.
 
@@ -59,7 +59,7 @@ Before writing a test, write one line: the real failure it would catch, the way 
 
 A seam is the public boundary where a caller observes behavior: a public function, a route, an emitted event, a written row. Tests go at seams, never against internals.
 
-- Name the seams in the plan or task (`plan`, `interfaces`), one line each on what a test there catches and what it misses. In an interactive session, confirm them with the user before writing tests.
+- Name the seams in the plan or task (`planning-and-task-breakdown`, `api-and-interface-design`), one line each on what a test there catches and what it misses. In an interactive session, confirm them with the user before writing tests.
 - One seam, a few behaviors. Not one test per method. A private helper is covered through the seam that uses it.
 
 ## 5. Strict, focused, or none [bl: strong]
@@ -165,8 +165,8 @@ A second case: a whole-project ratchet failed twice (89.51%, then 89.46%, agains
 
 ## Related
 
-- `build` runs this per slice. `plan` names the seams and the done check, `interfaces` the contracts. `browser-testing` for UI behavior.
-- `constraints` guards the bar: a lowered threshold or an easier test is a finding.
+- `incremental-implementation` runs this per slice. `planning-and-task-breakdown` names the seams and the done check, `api-and-interface-design` the contracts. `browser-testing` for UI behavior.
+- `quality-constraints` guards the bar: a lowered threshold or an easier test is a finding.
 
 ## Sources
 

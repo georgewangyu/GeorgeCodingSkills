@@ -16,10 +16,10 @@ Find the real options before committing to one. The goal is a decision the user 
 Not for:
 
 - The user does not yet know what they want (who, why, success): run `grill-me` first.
-- The direction is chosen and needs requirements: go to `spec`.
+- The direction is chosen and needs requirements: go to `spec-driven-development`.
 - A routine choice with one obvious answer: say so and do it.
 
-The chain is `grill-me` (what you want) -> `brainstorm` (what the options are) -> `spec` -> `plan`.
+The chain is `grill-me` (what you want) -> `brainstorm` (what the options are) -> `spec-driven-development` -> `planning-and-task-breakdown`.
 
 ## Step 0: Ground first [bl: invariant]
 
@@ -109,7 +109,7 @@ Ask the user to pick, recommended option first. If they cannot choose from descr
 
 - Every assumption has a test. An untested assumption is the most common way a good choice fails. [bl: invariant]
 - Not Doing is required, never blank. It is where the trade-offs become explicit. [bl: invariant]
-- Offer to save it to `docs/ideas/<topic>.md`, and offer the next step (`spec`). Save only if they agree.
+- Offer to save it to `docs/ideas/<topic>.md`, and offer the next step (`spec-driven-development`). Save only if they agree.
 
 ## Non-interactive runs [bl: strong]
 
