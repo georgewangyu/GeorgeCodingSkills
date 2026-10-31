@@ -1,6 +1,6 @@
 ---
 name: code-review-and-quality
-description: "The method for reviewing a code change, and for receiving a review on your own. Pin the intent, check size and description, read the tests first, then two separate passes: Spec (does it do what the issue and plan asked, no scope creep, no drift from a multi-PR plan) and Standards (repo rules plus a design-fit check for the 18 kinds of comment human reviewers actually leave: parallel scaffolding, missing why, dead knobs, wrong docs, concurrency, magic values, team vocabulary, logs vs metrics, mode flags, tests, control flow, placement, scope, plan drift, rollout defaults, performance, types, imports). Navigate past the diff, find the blast radius and prove the one fact it is safe because of, falsify the claims, refute each finding with a separate lens, suppress aggressively, write short plain comments. Receiving: verify each comment technically, then fix and reply Will fix, no performative agreement. Use when reviewing a PR, a diff or your own change before opening it, or when review comments arrive on your PR."
+description: "The method for reviewing a code change, and for receiving a review on your own. Pin the intent, check size and description, read the tests first, then two separate passes: Spec (does it do what the issue and plan asked, no scope creep, no drift from a multi-PR plan) and Standards (repo rules plus a design-fit check for the 18 kinds of comment human reviewers actually leave: parallel scaffolding, missing why, dead knobs, wrong docs, concurrency, magic values, team vocabulary, logs vs metrics, mode flags, tests, control flow, placement, scope, plan drift, rollout defaults, performance, types, imports). Navigate past the diff, find the blast radius and prove the one fact it is safe because of, falsify the claims, refute each finding with a separate lens, suppress aggressively, write short plain comments. Receiving: verify each comment technically, then fix and reply Will fix, no performative praise. Use when reviewing a PR, a diff or your own change before opening it, or when review comments arrive on your PR."
 ---
 
 # Code review and quality
@@ -20,7 +20,7 @@ Not for: a design doc or a change plan. A one-way decision mid-build: `doubt-dri
 | Situation | Use |
 |---|---|
 | Someone else's PR | this method; read the review bot's comments first and never duplicate them |
-| Your change before review | this method in a fresh context (a subagent that did not write the code), plus a blind pass that sees only the patch |
+| Your change before review | this method in a fresh context: the `reviewer` agent (Jarvis core, read-only) with only the diff, its contract and [`references/cr-review-checklist.md`](references/cr-review-checklist.md), plus a blind pass that sees only the patch. In a tool without agents, a fresh session that loads `role-reviewer` |
 | High-stakes or unfamiliar change | add `doubt-driven-review` for a second model on the riskiest claim |
 | Security exposure | `security-and-hardening` |
 

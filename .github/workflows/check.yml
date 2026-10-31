@@ -1,15 +1,27 @@
 name: check
-on: [push, pull_request]
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
 jobs:
   check:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+      - uses: actions/checkout@v4
+        with:
+          repository: georgewangyu/JarvisAIGeorge
+          path: .core
+          sparse-checkout: plugins/jarvis-ai-george/skills/principles-bitter-lesson
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python3 skills/principles-bitter-lesson/scripts/bitter_lesson.py check --root .
-      - run: python3 -m unittest discover -s skills/principles-bitter-lesson/tests
-      - run: python3 -m unittest discover -s skills/mistake-miner/tests
-      - run: pip install pyyaml
-      - run: python3 -c "import glob,yaml,sys; bad=[f for f in glob.glob('skills/*/SKILL.md') if not isinstance(yaml.safe_load(open(f).read().split('---',2)[1]),dict)]; print(bad); sys.exit(1 if bad else 0)"
+      - name: Generated adapters match sources, frontmatter, duplicate skill names
+        run: python3 tools/jarvis-build.py --check
+      - name: Bitter-lesson tags
+        run: python3 .core/plugins/jarvis-ai-george/skills/principles-bitter-lesson/scripts/bitter_lesson.py check --root .
+      - name: Scrub (public marker list)
+        run: tools/scrub-lint/scripts/scrub-lint check --lists public

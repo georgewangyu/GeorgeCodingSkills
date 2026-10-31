@@ -1,0 +1,24 @@
+{
+  "name": "george-coding-agent",
+  "version": "0.1.0",
+  "description": "Coding extension for Jarvis: a coding worker agent plus the build, verify, review and ship skills it uses.",
+  "author": {
+    "name": "George Wang",
+    "url": "https://github.com/georgewangyu"
+  },
+  "homepage": "https://github.com/georgewangyu/GeorgeCodingAgent",
+  "repository": "https://github.com/georgewangyu/GeorgeCodingAgent",
+  "license": "MIT",
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "GeorgeCodingAgent",
+    "shortDescription": "Coding extension for Jarvis: a coding worker agent plus the build, verify, review and ship skills it uses.",
+    "developerName": "George Wang",
+    "category": "Productivity",
+    "capabilities": [
+      "Interactive",
+      "Read",
+      "Write"
+    ]
+  }
+}
