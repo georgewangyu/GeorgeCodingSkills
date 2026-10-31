@@ -38,6 +38,10 @@ candidate to expire. Checker: `skills/principles-bitter-lesson/scripts/bitter_le
 | Reviewing a change, or got review comments | strong | Routing pointer to code-review-and-quality and the three Review skills. Could be learned from routing history. | 2027-04-30 | | |
 | Committing, branching, pushing | strong | Routing pointer to git-workflow-and-versioning. Could be learned from routing history. | 2027-04-30 | | |
 | Setting up or changing CI | strong | Routing pointer to ci-cd-and-automation. Could be learned from routing history. | 2027-04-30 | | |
+| Retiring, renaming or replacing | strong | Routing pointer to deprecation-and-migration. Could be learned from routing history. | 2027-04-30 | | |
+| Recording a decision or writing docs | strong | Routing pointer to documentation-and-adrs. Could be learned from routing history. | 2027-04-30 | | |
+| Adding logs, metrics or alerts | strong | Routing pointer to observability-and-instrumentation. Could be learned from routing history. | 2027-04-30 | | |
+| Deploying or launching | strong | Routing pointer to shipping-and-launch. Could be learned from routing history. | 2027-04-30 | | |
 | Need the quality bar | strong | Routing pointer to quality-constraints and mistake-miner. Could be learned from routing history. | 2027-04-29 | | |
 | Designing an API | strong | Routing pointer to api-and-interface-design. Could be learned from routing history. | 2027-04-29 | | |
 | Loading context | strong | Routing pointer to context-engineering. Could be learned from routing history. | 2027-04-29 | | |

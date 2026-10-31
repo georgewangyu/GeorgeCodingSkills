@@ -22,3 +22,7 @@ skills/security-and-hardening
 skills/performance-optimization
 skills/git-workflow-and-versioning
 skills/ci-cd-and-automation
+skills/deprecation-and-migration
+skills/documentation-and-adrs
+skills/observability-and-instrumentation
+skills/shipping-and-launch
